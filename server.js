@@ -1,9 +1,16 @@
 require('dotenv').config();
-const express = requiere('express');
+const express = require('express');
 const solicitudRoutes = require('./routes/solicitudRoutes');
+const connectDB = require('./config/dataBase');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Conectar a la base de datos
+connectDB().catch((error) => {
+    console.error('Error al conectar a la base de datos:', error);
+    process.exit(1);
+});
 
 // middleware
 app.use(express.json());

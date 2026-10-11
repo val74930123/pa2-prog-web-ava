@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+
 const {
     crearSolicitud,
     listarSolicitudes,
     obtenerSolicitud,
     actualizarSolicitud,
-    eliminarSolicitud,
+    eliminarSolicitud
 } = require('../controllers/solicitudController');
 
 router.post('/', crearSolicitud);
