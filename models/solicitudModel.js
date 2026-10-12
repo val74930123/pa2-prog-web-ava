@@ -1,28 +1,42 @@
+
 const mongoose = require('mongoose');
+
+// Defino los campos que tendrá cada solicitud académica.
 const solicitudSchema = new mongoose.Schema(
     {
-        nombre: { 
-            type: String, 
-            required: [true, 'El nombre es obligatorio'] 
+        // El nombre es obligatorio para registrar una solicitud.
+        nombre: {
+            type: String,
+            required: [true, 'El nombre es obligatorio']
         },
-        descripcion: { 
-            type: String, 
-            required: [true, 'La descripción es obligatoria'] 
+
+        // La descripción también es obligatoria.
+        descripcion: {
+            type: String,
+            required: [true, 'La descripción es obligatoria']
         },
-        categoria: { 
-            type: String, 
+
+        // La categoría solo acepta estas opciones.
+        // Si no se indica una, se utiliza Consulta.
+        categoria: {
+            type: String,
             enum: ['Soporte', 'Reclamo', 'Consulta'],
             default: 'Consulta'
         },
-        estado: { 
-            type: String, 
-            enum: ['pendiente', 'aprobada', 'rechazada'], 
-            default: 'pendiente' 
+
+        // El estado tiene tres opciones permitidas.
+        // Por defecto, una solicitud comienza pendiente.
+        estado: {
+            type: String,
+            enum: ['pendiente', 'aprobada', 'rechazada'],
+            default: 'pendiente'
         }
     },
-
     {
-    timestamps: true
-    });
+        // Mongoose registra automáticamente las fechas de creación y actualización.
+        timestamps: true
+    }
+);
 
+// Exporto el modelo para que los controladores puedan utilizarlo.
 module.exports = mongoose.model('Solicitud', solicitudSchema);
