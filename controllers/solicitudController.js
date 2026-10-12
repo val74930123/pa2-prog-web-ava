@@ -30,9 +30,50 @@ exports.obtenerSolicitud = async (req, res) => {
     }
 };
 
-exports.actualizarSolicitud = (req, res) => {
-    res.status(501).json({ mensaje: 'Pendiente: actualizarSolicitud' });
+exports.actualizarSolicitud = async (req, res) => {
+    try {
+        const { nombre, descripcion, categoria, estado} = req.body;
+        if (!nombre || !descripcion || !categoria || !estado){
+            return res.status(400).json({
+                mensaje: 'Envia el nombre, descripcion categoria y estado'
+            });
+        }
+
+        const solicitud = await Solicitud.findByIdAndUpdate(
+            req.params.id,{nombre, descripcion, categoria, estado},
+            { new: true, runValidators: true}
+        );
+
+        if(!solicitud) {
+            return res.status(404).json({mensaje: 'solicitus no encontrada'});
+        }
+
+        return res.status(200).json({
+            mensaje: 'solicidud actualizada'
+        });
+    } catch (error){
+          console.error('Error al actualizar solicitud:', error);
+        res.status(500).json({ mensaje: 'error al actualizar' });
+    }
 };
-exports.eliminarSolicitud = (req, res) => {
-    res.status(501).json({ mensaje: 'Pendiente: eliminarSolicitud' });
+exports.eliminarSolicitud = async (req, res) => {
+  try {
+    const solicitud = await Solicitud.findByIdAndDelete(req.params.id);
+
+    if (!solicitud) {
+      return res.status(404).json({ mensaje: 'Solicitud no encontrada' });
+    }
+
+    return res.status(200).json({
+      mensaje: 'Solicitud eliminada',
+      solicitud
+    });
+  } catch (error) {
+    const status = error.name === 'CastError' ? 400 : 500;
+
+    return res.status(status).json({
+      mensaje: 'Error al eliminar la solicitud',
+      error: error.message
+    });
+  }
 };
