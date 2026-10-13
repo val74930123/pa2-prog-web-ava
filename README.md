@@ -8,7 +8,7 @@ Completar los nombres completos y confirmar la participación de cada integrante
 | Integrante | Rol | Participación |
 |---|---|---|
 | Ian Palmieri Gonzaga | P4: MongoDB y Mongoose | Configuración de MongoDB local, conexión con Mongoose, revisión del modelo Solicitud y prueba de persistencia. |
-| [Nombre completo] | P1: Servidor y middleware | [Completar con la participación real]. |
+| Valeria Ravina Pérez | P1: Servidor y middleware | Creación del proyecto con Node.js y Express, configuración del middleware (express.json, registro de peticiones y manejo de errores), estructura de carpetas, configuración de .gitignore y .env.example, y subida de la base del proyecto a GitHub.
 | Rodrigo Arturo Paredes Santa Cruz | P2: Crear y consultar solicitudes | Configuración de rutas y controladores para crear, listar y ver la solicitud a partir del ID. |
 | [Nombre completo] | P3: Actualizar y eliminar solicitudes | [Completar con la participación real]. |
 | Alejandro Josue Chero Izaguirre | P5: CRUD persistente | Pruebas de las operaciones CRUD con Postman, verificación de los datos almacenados en MongoDB Compass. |
