@@ -9,7 +9,7 @@ Completar los nombres completos y confirmar la participación de cada integrante
 |---|---|---|
 | Ian Palmieri Gonzaga | P4: MongoDB y Mongoose | Configuración de MongoDB local, conexión con Mongoose, revisión del modelo Solicitud y prueba de persistencia. |
 | [Nombre completo] | P1: Servidor y middleware | [Completar con la participación real]. |
-| [Nombre completo] | P2: Crear y consultar solicitudes | [Completar con la participación real]. |
+| Rodrigo Arturo Paredes Santa Cruz | P2: Crear y consultar solicitudes | Configuración de rutas y controladores para crear, listar y ver la solicitud a partir del ID. |
 | [Nombre completo] | P3: Actualizar y eliminar solicitudes | [Completar con la participación real]. |
 | [Nombre completo] | P5: CRUD persistente | [Completar con la participación real]. |
 
