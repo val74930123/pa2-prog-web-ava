@@ -45,11 +45,11 @@ exports.actualizarSolicitud = async (req, res) => {
         );
 
         if(!solicitud) {
-            return res.status(404).json({mensaje: 'solicitud no encontrada'});
+            return res.status(404).json({mensaje: 'Solicitud no encontrada'});
         }
 
         return res.status(200).json({
-            mensaje: 'solicitud actualizada'
+            mensaje: 'Solicitud actualizada'
         });
     } catch (error){
           console.error('Error al actualizar solicitud:', error);
