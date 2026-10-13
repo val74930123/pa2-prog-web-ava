@@ -35,7 +35,7 @@ exports.actualizarSolicitud = async (req, res) => {
         const { nombre, descripcion, categoria, estado} = req.body;
         if (!nombre || !descripcion || !categoria || !estado){
             return res.status(400).json({
-                mensaje: 'Envia el nombre, descripcion categoria y estado'
+                mensaje: 'Envia el nombre, descripcion, categoria y estado'
             });
         }
 
@@ -45,11 +45,11 @@ exports.actualizarSolicitud = async (req, res) => {
         );
 
         if(!solicitud) {
-            return res.status(404).json({mensaje: 'solicitus no encontrada'});
+            return res.status(404).json({mensaje: 'solicitud no encontrada'});
         }
 
         return res.status(200).json({
-            mensaje: 'solicidud actualizada'
+            mensaje: 'solicitud actualizada'
         });
     } catch (error){
           console.error('Error al actualizar solicitud:', error);
