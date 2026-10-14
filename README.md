@@ -127,7 +127,7 @@ La prueba de creación, consulta y persistencia permitió verificar el funcionam
 
 ## 11. Video de exposición
 
-**Video público de YouTube:** [PEGAR AQUÍ EL ENLACE]
+**Video público de YouTube:** (https://youtu.be/13UsPM96vUg?si=UZokDavNSj5aa16M)
 
 El video debe ser público e incluir la participación de todos los integrantes, según las indicaciones de la evaluación.
 EOF
